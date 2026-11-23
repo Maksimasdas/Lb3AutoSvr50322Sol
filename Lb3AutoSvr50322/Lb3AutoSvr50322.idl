@@ -1,0 +1,68 @@
+﻿// Lb3AutoSvr50322.idl: источник языка IDL для Lb3AutoSvr50322
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(5474df26-b4ed-4210-b6c9-e3bc62900041),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMyMath50322 : IDispatch
+{
+	[id(1), helpstring("сложение")] 
+		HRESULT Add([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+	[id(2), helpstring("вычитание")] 
+		HRESULT Sub([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+	[id(3), helpstring("умножение")]
+		HRESULT Mul([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+
+	[propget, id(4), helpstring("Параметр 1")] HRESULT Param1([out, retval] LONG* pVal);
+	[propput, id(4), helpstring("Параметр 1")] HRESULT Param1([in] LONG newVal);
+};
+
+
+
+//второй интерфейс
+[
+	object,
+	//uuid(5474df26-b4ed-4210-b6c9-e3bc62900041),
+	uuid(7DE977AB-E083-4D6C-8225-7E1F6414C963),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IVer : IDispatch
+{
+	
+	[id(1), helpstring("Приветствие")] 
+	HRESULT GetAuthor([in] BSTR name, [out, retval] BSTR* message);
+};
+
+
+
+
+[
+	uuid(df78cd6c-89f8-4f5f-834d-7e5ae40b424a),
+	version(1.0),
+]
+library Lb3AutoSvr50322Lib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(f6751146-047d-4f23-aa6b-ec59dfcbee3a)
+	]
+	coclass MyMath50322
+	{
+		[default] interface IMyMath50322;
+				  interface IVer;
+	};
+};
+
+import "shobjidl.idl";

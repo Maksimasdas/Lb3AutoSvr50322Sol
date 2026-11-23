@@ -1,0 +1,17 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ClientCpp/ClientCpp.vcxproj" Id="8f5ffb66-1c4b-48f9-9c34-2d9e3cc463ad" />
+  <Project Path="ClientCsh/ClientCsh.csproj" Id="3c7b558d-5a08-44bc-aae0-11bb6da530cf" />
+  <Project Path="ClientCshD/ClientCshD.csproj" Id="7e86fc15-db5c-4f25-83a3-636b52471411" />
+  <Project Path="Lb3AutoSvr50322/Lb3AutoSvr50322.vcxproj" />
+  <Project Path="Lb3AutoSvr50322PS/Lb3AutoSvr50322PS.vcxproj">
+    <BuildDependency Project="Lb3AutoSvr50322/Lb3AutoSvr50322.vcxproj" />
+    <Build Solution="*|x64" Project="false" />
+    <Build Solution="*|x86" Project="false" />
+  </Project>
+  <Project Path="Lb3ClientVB/Lb3ClientVB.vbproj" Id="2ed5d574-a1aa-4496-807f-afe97f51ec40" />
+</Solution>
